@@ -26,5 +26,6 @@ public interface Console {
 -Copiar archivos
 -Mover archivos
 -Borrar archivos
-
+-Leer archivos
+-Borrar directorios
 */
