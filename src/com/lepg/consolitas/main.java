@@ -6,7 +6,7 @@ package com.lepg.consolitas;
  */
 
 
-public class main {  //Culo
+public class main {
 
 
     public static void main(String[] args) {
