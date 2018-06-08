@@ -6,19 +6,19 @@ package com.lepg.consolitas;
  */
 
 
-public interface Console {
-    void MoveMe();
-    void WriteTxt();
-    void ListDir();
-    void CreateDir();
-    void CopyTxt();
-    void MoveTxt();
-    void DelTxt();
-    void ReadTxt();  //Extra
-    void DelDir();     //Extra
+public abstract class Console {
+    abstract void MoveMe();
+    abstract void WriteTxt();
+    abstract void ListDir();
+    abstract void CreateDir();
+    abstract void CopyTxt();
+    abstract void MoveTxt();
+    abstract void DelTxt();
+    abstract void ReadTxt();  //Extra
+    abstract void DelDir();     //Extra
     
-    void CheckStr();
-    void Exit();
+    abstract void CheckStr();
+    abstract void Exit();
 }
 
 /*

@@ -6,6 +6,6 @@ package com.lepg.consolitas;
  */
 
 
-public class UnixConsole implements Console {
+public class UnixConsole extends Console {
         
 }

@@ -6,6 +6,6 @@ package com.lepg.consolitas;
  */
 
 
-public class WindowsConsole implements Console {
+public class WindowsConsole extends Console {
     
 }
