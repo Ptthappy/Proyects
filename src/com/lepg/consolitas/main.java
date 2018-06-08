@@ -27,7 +27,11 @@ public class main {
     public static void main(String[] args) {
         Scanner s=new Scanner(System.in);
         int a;
-        
+        String l="Hola a todos";
+        int x=l.indexOf(' ');
+        String l2=l.substring(0, x);
+        System.out.println(l2);
+        System.out.println(x);
         
         System.out.println("Select which console do you want to use\n1. Windows Console\n2. Unix Console");
         
