@@ -16,6 +16,9 @@ public interface Console {
     void DelTxt();
     void ReadTxt();  //Extra
     void DelDir();     //Extra
+    
+    void CheckStr();
+    void Exit();
 }
 
 /*
