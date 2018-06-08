@@ -8,4 +8,10 @@ package com.lepg.consolitas;
 
 public class WindowsConsole extends Console {
     
+    void CheckStr(String s) {
+        switch(s) {
+            case "a":
+                break;
+        }
+    }
 }
