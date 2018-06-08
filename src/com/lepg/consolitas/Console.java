@@ -18,7 +18,9 @@ public abstract class Console {
     abstract void DelDir();     //Extra
     
     abstract void CheckStr();
-    abstract void Exit();
+    boolean Exit() {
+        return true;
+    }
 }
 
 /*

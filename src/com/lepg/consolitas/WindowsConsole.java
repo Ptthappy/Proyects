@@ -14,11 +14,13 @@ public class WindowsConsole extends Console {
         
         x=s.indexOf(' ');
         String s2=s.substring(0, x);
+        String s3=s.substring(x+1);
         s2=s2.toLowerCase();
         
         switch(s2) {
             
             case "echo":
+                WriteTxt(s3);
                 break;
             case "copy":
                 break;
@@ -37,8 +39,23 @@ public class WindowsConsole extends Console {
             case "cd":
                 break;
             default:
-                System.out.println("No se reconoce el comando \"" + s + "\"");
+                System.out.println("No se reconoce el comando \"" + s2 + "\"");
+                break;
                 
         }
+        
+    }
+    
+    
+    void WriteTxt(String s) {
+        char c;
+        boolean b;
+        
+        
+        do {
+            c=s.charAt(0);
+            
+        }
+        
     }
 }
