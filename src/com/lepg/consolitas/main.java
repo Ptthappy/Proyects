@@ -25,6 +25,10 @@ public class main {
     }
 
     public static void main(String[] args) {
+        char c1, c2;
+        int i=32;
+        c1=(char) i;
+        System.out.println("A " + c1 + " A");
         Scanner s=new Scanner(System.in);
         int a;
         
