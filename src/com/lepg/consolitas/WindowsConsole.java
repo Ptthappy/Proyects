@@ -1,8 +1,10 @@
 package com.lepg.consolitas;
 
 
+import java.util.Scanner;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 
 /**
@@ -15,14 +17,23 @@ public class WindowsConsole extends Console {
     FileOutputStream fout;
     
     
-    void CheckStr(String s) {
+    void CheckStr(String s) throws IOException {
         int x;
-        
+        String s2;
+        String s3;
         
         x=s.indexOf(' ');
-        String s2=s.substring(0, x);
-        String s3=s.substring(x+1);
+        if (x==-1) {
+            s2=s;
+            s3=null;
+        }
+        else {
+            s2=s.substring(0, x);
+            s3=s.substring(x+1);
+        }
+        
         s2=s2.toLowerCase();
+        
         
         switch(s2) {
             
@@ -30,20 +41,30 @@ public class WindowsConsole extends Console {
                 WriteTxt(s3);
                 break;
             case "copy":
+                CopyTxt();
                 break;
             case "move":
+                MoveTxt();
                 break;
             case "del":
+                DelTxt();
                 break;
             case "notepad":
+                ReadTxt();
                 break;
             case "mkdir":
+                CreateDir();
                 break;
             case "dir":
+                ListDir();
                 break;
             case "rmdir":
+                DelDir();
                 break;
             case "cd":
+                MoveMe();
+                break;
+            case "exit":
                 break;
             default:
                 System.out.println("No se reconoce el comando \"" + s2 + "\"");
@@ -54,7 +75,7 @@ public class WindowsConsole extends Console {
     }
     
     
-    void WriteTxt(String s) throws Exception {
+    void WriteTxt(String s) throws IOException {
         char c;
         int n;
         int i1=32;
@@ -86,10 +107,38 @@ public class WindowsConsole extends Console {
         }
         
         fin=new FileInputStream(s);
+        Scanner sc=new Scanner (fin);
+        
         
         
         
         
         
     }
+    
+    void MoveMe() {
+        
+    }
+    void ListDir() {
+        
+    }
+    void CreateDir() {
+        
+    }
+    void CopyTxt() {
+        
+    }
+    void MoveTxt() {
+        
+    }
+    void DelTxt() {
+        
+    }
+    void ReadTxt() {
+        
+    }
+    void DelDir() {
+        
+    }
+    
 }

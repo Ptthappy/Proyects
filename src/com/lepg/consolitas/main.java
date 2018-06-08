@@ -3,7 +3,7 @@ package com.lepg.consolitas;
 
 import java.util.Scanner;
 import java.util.InputMismatchException;
-
+import java.io.IOException;
 
 /**
  * @author luis
@@ -24,13 +24,12 @@ public class main {
         return C;  //Retorna el objeto a instanciar
     }
 
-    public static void main(String[] args) {
-        char c1, c2;
-        int i=32;
-        c1=(char) i;
-        System.out.println("A " + c1 + " A");
+    public static void main(String[] args) throws IOException {
         Scanner s=new Scanner(System.in);
+        Scanner s2=new Scanner(System.in);
+        String S;
         int a;
+        int b=0;
         
         
         System.out.println("Select which console do you want to use\n1. Windows Console\n2. Unix Console");
@@ -53,8 +52,10 @@ public class main {
             switch(a) {
                 
                 case 1:
+                    b=1;
                     break;
                 case 2:
+                    b=2;
                     break;
                 default:
                     System.out.println("Error");
@@ -62,9 +63,14 @@ public class main {
                     
             }
             
-        }while(a!=1 || a!=2);
+        }while(b!=1);
         
         getC(a);
+        do {
+            S=s2.nextLine();
+            C.CheckStr(S);
+        }while(!S.equals("exit")); 
+        
         
     }
     

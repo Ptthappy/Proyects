@@ -1,6 +1,7 @@
 package com.lepg.consolitas;
 
 
+import java.io.IOException;
 /**
  * @author luis
  */
@@ -8,7 +9,7 @@ package com.lepg.consolitas;
 
 public abstract class Console {
     abstract void MoveMe();
-    abstract void WriteTxt();
+    abstract void WriteTxt(String S) throws IOException;
     abstract void ListDir();
     abstract void CreateDir();
     abstract void CopyTxt();
@@ -17,7 +18,7 @@ public abstract class Console {
     abstract void ReadTxt();  //Extra
     abstract void DelDir();     //Extra
     
-    abstract void CheckStr();
+    abstract void CheckStr(String S) throws IOException;
     boolean Exit() {
         return true;
     }
