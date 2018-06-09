@@ -2,9 +2,7 @@ package com.lepg.consolitas;
 
 
 import java.util.Scanner;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 
 /**
@@ -13,8 +11,19 @@ import java.io.IOException;
 
 
 public class WindowsConsole extends Console {
+    Scanner s1=new Scanner(System.in);
+    Scanner s2=new Scanner(System.in);
     FileInputStream fin;
     FileOutputStream fout;
+    File F[]=new File[100];
+    String cmd;
+    int a=0;
+    
+    
+    void Iter() throws IOException {
+        cmd=s1.nextLine();
+        CheckStr(cmd);
+    }
     
     
     void CheckStr(String s) throws IOException {
@@ -107,6 +116,7 @@ public class WindowsConsole extends Console {
                 
                 s2=s.substring(0, n);
                 s=s.substring(n+2);
+                File[a]=new File();
                 
             }
             
@@ -116,9 +126,8 @@ public class WindowsConsole extends Console {
                 
             }
             
-            
-            
         }
+        
     }
     
     void MoveMe() {

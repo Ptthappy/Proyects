@@ -25,6 +25,8 @@ public class main {
     }
 
     public static void main(String[] args) throws IOException {
+        debugger d=new debugger();
+        d.Test();
         Scanner s=new Scanner(System.in);
         Scanner s2=new Scanner(System.in);
         String S;
@@ -66,10 +68,7 @@ public class main {
         }while(b!=1);
         
         getC(a);
-        do {
-            S=s2.nextLine();
-            C.CheckStr(S);
-        }while(!S.equals("exit")); 
+        C.Iter();
         
         
     }

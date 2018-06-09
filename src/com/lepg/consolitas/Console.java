@@ -19,6 +19,7 @@ public abstract class Console {
     abstract void DelDir();     //Extra
     
     abstract void CheckStr(String S) throws IOException;
+    abstract void Iter() throws IOException;
     boolean Exit() {
         return true;
     }
