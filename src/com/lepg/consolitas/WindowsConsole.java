@@ -76,44 +76,49 @@ public class WindowsConsole extends Console {
     
     
     void WriteTxt(String s) throws IOException {
-        char c;
-        int n;
-        int i1=32;
-        int i2=62;
-        boolean b;
-        String s2;
+        if (s!=null)
+            System.out.println("ECHO está activado");
         
-        
-        do {
+        else {
+            char c;
+            int n;
+            int i1=32;
+            int i2=62;
+            boolean b;
+            String s2;
             
-            c=s.charAt(0);
-            if(c==(char) i1) {
-                s=s.substring(1);
-                b=false;
+            
+            do {
+                
+                c=s.charAt(0);
+                if(c==(char) i1) {
+                    s=s.substring(1);
+                    b=false;
+                }
+                
+                else
+                    b=true;
+                
+            }while(b!=true);
+            
+            
+            n=s.indexOf('>');
+            if(s.charAt(n)==i2  && s.charAt(n+1)==i2) {
+                
+                s2=s.substring(0, n);
+                s=s.substring(n+2);
+                
             }
             
-            else
-                b=true;
+            else {
+                
+                System.out.println(s);
+                
+            }
             
-        }while(b!=true);
-        
-        
-        n=s.indexOf('>');
-        if(s.charAt(n)==i2  && s.charAt(n+1)==i2) {
             
-            s2=s.substring(0, n);
-            s=s.substring(n+2);
             
         }
-        
-        fin=new FileInputStream(s);
-        Scanner sc=new Scanner (fin);
-        
-        
-        
-        
-        
-        
     }
     
     void MoveMe() {
