@@ -39,7 +39,7 @@ public class WindowsConsole extends Console {
         x=s.indexOf(' ');
         if (x==-1) {
             s2=s;
-            s3=null;
+            s3="";
         }
         else {
             s2=s.substring(0, x);
@@ -90,42 +90,36 @@ public class WindowsConsole extends Console {
     
     
     void WriteTxt(String s) throws IOException {
-        if (s==null)
+        char c=0;
+        int n;
+        boolean b;
+        String s2;
+        
+        
+        
+        if (s.equals(""))
             System.out.println("ECHO está activado");
         
         else {
-            char c;
-            int n;
-            int i1=32;
-            int i2=62;
-            boolean b;
-            String s2;
             
-            
-            do {
-                
-                c=s.charAt(0);
-                if(c==32) {
-                    s=s.substring(1);
-                    b=false;
-                }
-                
-                else
-                    b=true;
-                
-            }while(b==false);
             
             
             n=s.indexOf('>');
             if (n!=-1) {
-                if(s.charAt(n)==64  && s.charAt(n+1)==64) {
+                try {
+                    if(s.charAt(n)==62  && s.charAt(n+1)==62) {
                     
                     s2=s.substring(0, n);
                     s=s.substring(n+2);
                     F[a]=new File(dir, s);
                     F[a].createNewFile();
                     
+                    } 
+                      
+                } catch (StringIndexOutOfBoundsException e) {
+                    System.out.println("Error de sintáxis");
                 }
+                    
             }
             else {
                 
@@ -136,6 +130,9 @@ public class WindowsConsole extends Console {
         }
         
     }
+    
+    
+    
     
     void MoveMe() {
         
