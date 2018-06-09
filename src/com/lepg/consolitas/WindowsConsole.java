@@ -12,17 +12,22 @@ import java.io.*;
 
 public class WindowsConsole extends Console {
     Scanner s1=new Scanner(System.in);
-    Scanner s2=new Scanner(System.in);
     FileInputStream fin;
     FileOutputStream fout;
     File F[]=new File[100];
     String cmd;
+    String dir="C:/Users/luis/Desktop/Test";
     int a=0;
     
     
     void Iter() throws IOException {
-        cmd=s1.nextLine();
-        CheckStr(cmd);
+        
+        do {
+            System.out.print(dir + ">");
+            cmd=s1.nextLine();
+            CheckStr(cmd);
+        }while(!cmd.equals("exit"));
+        
     }
     
     
@@ -85,7 +90,7 @@ public class WindowsConsole extends Console {
     
     
     void WriteTxt(String s) throws IOException {
-        if (s!=null)
+        if (s==null)
             System.out.println("ECHO está activado");
         
         else {
@@ -100,7 +105,7 @@ public class WindowsConsole extends Console {
             do {
                 
                 c=s.charAt(0);
-                if(c==(char) i1) {
+                if(c==32) {
                     s=s.substring(1);
                     b=false;
                 }
@@ -108,18 +113,20 @@ public class WindowsConsole extends Console {
                 else
                     b=true;
                 
-            }while(b!=true);
+            }while(b==false);
             
             
             n=s.indexOf('>');
-            if(s.charAt(n)==i2  && s.charAt(n+1)==i2) {
-                
-                s2=s.substring(0, n);
-                s=s.substring(n+2);
-                File[a]=new File();
-                
+            if (n!=-1) {
+                if(s.charAt(n)==64  && s.charAt(n+1)==64) {
+                    
+                    s2=s.substring(0, n);
+                    s=s.substring(n+2);
+                    F[a]=new File(dir, s);
+                    F[a].createNewFile();
+                    
+                }
             }
-            
             else {
                 
                 System.out.println(s);
