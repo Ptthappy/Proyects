@@ -96,39 +96,44 @@ public class WindowsConsole extends Console {
         String s2;
         
         
-        
         if (s.equals(""))
             System.out.println("ECHO está activado");
         
         else {
-            
-            
-            
+                
             n=s.indexOf('>');
             if (n!=-1) {
+                
                 try {
+                    
                     if(s.charAt(n)==62  && s.charAt(n+1)==62) {
-                    
-                    s2=s.substring(0, n);
-                    s=s.substring(n+2);
-                    
-                    F=new File(dir, s);
-                    
-                    F.createNewFile();
-                    try {
-                    fout=new FileOutputStream(F);
-                    byte Din[]=s2.getBytes();
-                    fout.write(Din);
-                    fout.close();
-                    fout=null;
-                    } catch (IOException e) {
-                        System.out.println("Los parámetros son erróneos");
-                    }
-                    
+                        
+                        s2=s.substring(0, n);
+                        s=s.substring(n+2);
+                        
+                        F=new File(dir, s);
+                        
+                        F.createNewFile();
+                        try {
+                            
+                            fout=new FileOutputStream(F);
+                            byte Din[]=s2.getBytes();
+                            fout.write(Din);
+                            fout.close();
+                            fout=null;
+                            
+                        } catch (IOException e) {
+                            
+                            System.out.println("Los parámetros son erróneos");
+                            
+                        }
+                        
                     }
                       
                 } catch (StringIndexOutOfBoundsException e) {
+                    
                     System.out.println("Error de sintáxis");
+                    
                 }
                     
             }
