@@ -3,6 +3,7 @@ package com.lepg.consolitas;
 
 import java.util.Scanner;
 import java.io.*;
+import java.util.Arrays;
 
 
 /**
@@ -30,7 +31,7 @@ public class WindowsConsole extends Console {
         
     }
     
-    
+    @Override
     void CheckStr(String s) throws IOException {
         int x;
         String s2;
@@ -88,7 +89,7 @@ public class WindowsConsole extends Console {
         
     }
     
-    
+    @Override
     void WriteTxt(String s) throws IOException {
         char c=0;
         int n;
@@ -120,7 +121,6 @@ public class WindowsConsole extends Console {
                             byte Din[]=s2.getBytes();
                             fout.write(Din);
                             fout.close();
-                            fout=null;
                             
                         } catch (IOException e) {
                             
@@ -148,29 +148,54 @@ public class WindowsConsole extends Console {
     }
     
     
-    
-    
     void MoveMe() {
         
     }
+    
+    
     void ListDir() {
         
+        File F=new File(dir);
+        String list[]=F.list();
+        try {
+            
+            for (int i=0; list[i]!=null; i++) {
+                
+                System.out.println(list[i]);
+                
+            }
+                
+        } catch (ArrayIndexOutOfBoundsException e) {}
+        
+        
     }
+    
+    
     void CreateDir() {
         
     }
+    
+    
     void CopyTxt() {
         
     }
+    
+    
     void MoveTxt() {
         
     }
+    
+    
     void DelTxt() {
         
     }
+    
+    
     void ReadTxt() {
         
     }
+    
+    
     void DelDir() {
         
     }

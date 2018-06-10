@@ -26,7 +26,6 @@ public class main {
 
     public static void main(String[] args) throws IOException {
         debugger d=new debugger();
-        d.Test();
         Scanner s=new Scanner(System.in);
         Scanner s2=new Scanner(System.in);
         String S;

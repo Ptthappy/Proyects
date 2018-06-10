@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public abstract class Console {
     abstract void MoveMe();
-    abstract void WriteTxt(String S) throws IOException;
+    abstract void WriteTxt(String S) throws IOException;  //redi
     abstract void ListDir();
     abstract void CreateDir();
     abstract void CopyTxt();
@@ -18,8 +18,8 @@ public abstract class Console {
     abstract void ReadTxt();  //Extra
     abstract void DelDir();     //Extra
     
-    abstract void CheckStr(String S) throws IOException;
-    abstract void Iter() throws IOException;
+    abstract void CheckStr(String S) throws IOException;  //redi
+    abstract void Iter() throws IOException;  //redi
     boolean Exit() {
         return true;
     }
