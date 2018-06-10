@@ -14,14 +14,14 @@ public class WindowsConsole extends Console {
     Scanner s1=new Scanner(System.in);
     FileInputStream fin;
     FileOutputStream fout;
-    File F[]=new File[100];
+    File F;
     String cmd;
     String dir="C:/Users/luis/Desktop/Test";
     int a=0;
     
     
     void Iter() throws IOException {
-        
+        fout=null;
         do {
             System.out.print(dir + ">");
             cmd=s1.nextLine();
@@ -111,10 +111,21 @@ public class WindowsConsole extends Console {
                     
                     s2=s.substring(0, n);
                     s=s.substring(n+2);
-                    F[a]=new File(dir, s);
-                    F[a].createNewFile();
                     
-                    } 
+                    F=new File(dir, s);
+                    
+                    F.createNewFile();
+                    try {
+                    fout=new FileOutputStream(F);
+                    byte Din[]=s2.getBytes();
+                    fout.write(Din);
+                    fout.close();
+                    fout=null;
+                    } catch (IOException e) {
+                        System.out.println("Los parámetros son erróneos");
+                    }
+                    
+                    }
                       
                 } catch (StringIndexOutOfBoundsException e) {
                     System.out.println("Error de sintáxis");
